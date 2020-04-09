@@ -1,0 +1,135 @@
+body
+{
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#slika
+{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#pocetni
+{
+    position: relative;
+}
+
+#glavni
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    float: left;
+}
+
+#glavni2
+{
+    position: absolute;
+    right: 0px;
+    width: 0vw;
+    height: 100vh;
+    float: right;
+    transition: 1s;
+}
+
+#profilna
+{
+    width: 120px;
+    border-radius: 100%;
+    filter: brightness(.85);
+}
+
+.ime
+{
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#lista
+{
+    overflow: hidden;
+    width: 135px;
+    height: 40px;
+    position: relative;
+    right: 50%;
+}
+
+#pomocniDiv
+{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+}
+
+ol
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: gray;
+    position: absolute;
+}
+
+li
+{
+    padding-left: 5px;
+    height: 40px;
+}
+
+#prva
+{
+    animation: 5s linear infinite running ikone1;
+}
+
+#druga
+{
+    margin-left: 100%;
+    animation: 5s linear infinite running ikone2;
+}
+
+@keyframes ikone1
+{
+    0% {margin-left: 0%}
+    100% {margin-left: -100%}
+}
+
+@keyframes ikone2
+{
+    0% {margin-left: 100%;}
+    100% {margin-left: 0%;}
+}
+
+#f1:hover, #f2:hover
+{
+    color: rgb(47, 47, 255);
+    transition: .2s;
+}
+
+#g1:hover, #g2:hover
+{
+    color: orange;
+    transition: .2s;
+}
+
+#l1:hover, #l2:hover
+{
+    color: rgb(47, 120, 255);
+    transition: .2s;
+}
+
+#name
+{
+    font-size: 25px;
+    font-family: 'Oxygen', sans-serif;
+    cursor: auto;
+}
