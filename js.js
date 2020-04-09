@@ -3,28 +3,18 @@ angular.module("biografija",[])
     $rootScope.promjenaEducation=false
 })
 .controller("kontrolerSlika",function($scope,$interval,$timeout){
-    var slike=["background.jpg","background2.jpg"]
+    var slike=["background.jpg","background2.jpg","background3.jpg","background4.jpg"]
     $scope.slika=slike[0]
-    var i=1;
+    var i=0;
     $interval(function(){
-        //$timeout(function(){
-            $scope.efekat={"filter":"brightness(0)",
-                           "transition":"1s"}
-            
+        $scope.efekat={"filter":"brightness(0)"}
+        $timeout(function(){
             $scope.slika=slike[i]
-            
             i++;
             if(i==slike.length)
             i=0;
-            
-            var t1=$timeout(function(){
-                $scope.efekat={"filter":"brightness(1)",
-                            "transition":"1s"}
-            },1000)
-            $timeout.cancel(t1)
-            var t2=$timeout(function(){},1000)
-            $timeout.cancel(t2)
-        //},10000)
+            $scope.efekat={"filter":"brightness(1)"}
+        },1000)
     },4000)
 })
 .controller("kontrolerLinkova",function($scope){

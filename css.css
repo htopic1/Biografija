@@ -13,6 +13,11 @@ body
     position: fixed;
 }
 
+#slike
+{
+    transition: 1s;
+}
+
 #pocetni
 {
     position: relative;
