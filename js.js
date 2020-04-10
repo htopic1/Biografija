@@ -1,21 +1,24 @@
 angular.module("biografija",[])
 .run(function($rootScope){
     $rootScope.promjenaEducation=false
+    $rootScope.promjenaSkills=false
+    $rootScope.promjenaAboutMe=false
 })
 .controller("kontrolerSlika",function($scope,$interval,$timeout){
-    var slike=["background.jpg","background2.jpg","background3.jpg","background4.jpg"]
+    var slike=["background.jpg","background2.jpg","background3.jpg","background4.jpg","background5.jpg","background6.jpg","background7.jpg","background8.jpg","background9.jpg","background10.jpg"]
     $scope.slika=slike[0]
     var i=0;
     $interval(function(){
         $scope.efekat={"filter":"brightness(0)"}
-        $timeout(function(){
-            $scope.slika=slike[i]
+        $scope.slika=slike[i]
             i++;
             if(i==slike.length)
             i=0;
+        $timeout(function(){
             $scope.efekat={"filter":"brightness(1)"}
-        },1000)
-    },4000)
+        },2000)
+        
+    },6000)
 })
 .controller("kontrolerLinkova",function($scope){
     $scope.hover=function(){
@@ -25,17 +28,83 @@ angular.module("biografija",[])
         $scope.hoverStil={"animation-play-state":"running"}
     }
 })  
-.controller("kontrolerEducation",function($scope,$rootScope){
+.controller("kontrolerMenua",function($scope,$rootScope){
+    $scope.aboutMe=function(){
+        if($rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true)
+        {
+            $scope.vratiEducation()
+            $scope.vratiSkills()
+        }
+        $rootScope.promjenaAboutMe=true
+        $scope.izgledEkrana={"width":"51vw"}
+        $scope.stilPomocnogAboutMe={"width":"45vw",
+                                    "visibility":"visible",
+                                    "overflow":"auto"}
+        /*$scope.stilAboutMe={"background":"white",
+                              "color":"black"}*/
+    }
     $scope.education=function(){
+        if($rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true)
+        {
+            $scope.vratiAboutMe()
+            $scope.vratiSkills()
+        }
         $rootScope.promjenaEducation=true
         $scope.izgledEkrana={"width":"51vw"}
-        $scope.stilPomocnog={"background":"blue",
-                             "width":"45vw"}
+        $scope.stilPomocnogEducation={"width":"45vw",
+                                      "visibility":"visible",
+                                      "overflow":"auto"}
+        /*$scope.stilEducation={"background":"white",
+                              "color":"black"}*/
+    }
+    $scope.skills=function(){
+        if($rootScope.promjenaEducation==true || $rootScope.promjenaAboutMe==true)
+        {
+            $scope.vratiAboutMe()
+            $scope.vratiEducation()
+        }
+        $rootScope.promjenaSkills=true
+        $scope.izgledEkrana={"width":"51vw"}
+        $scope.stilPomocnogSkills={"width":"45vw",
+                                   "visibility":"visible",
+                                   "overflow":"auto"}
+        /*$scope.stilSkills={"background":"white",
+                              "color":"black"}*/
+    }
+
+    $scope.vratiAboutMe=function(){
+        $rootScope.promjenaAboutMe=false
+        $scope.izgledEkrana={"width":"100vw"}
+        $scope.stilPomocnogAboutMe={"width":"0vw",
+                                      "visibility":"hidden",
+                                      "overflow":"hidden"}
+        /*$scope.stilAboutMe={"background":"none",
+                              "color":"white"}*/
+    }
+    $scope.vratiEducation=function(){
+        $rootScope.promjenaEducation=false
+        $scope.izgledEkrana={"width":"100vw"}
+        $scope.stilPomocnogEducation={"width":"0vw",
+                                      "visibility":"hidden",
+                                      "overflow":"hidden"}
+        /*$scope.stilEducation={"background":"none",
+                              "color":"white"}*/
+    }
+    $scope.vratiSkills=function(){
+        $rootScope.promjenaSkills=false
+        $scope.izgledEkrana={"width":"100vw"}
+        $scope.stilPomocnogSkills={"width":"0vw",
+                                      "visibility":"hidden",
+                                      "overflow":"hidden"}
+        /*$scope.stilSkills={"background":"none",
+                              "color":"white"}*/
     }
 })
 .controller("kontrolerLinkova2",function($scope,$rootScope,$interval){
     $interval(function(){
-        if($rootScope.promjenaEducation==true)
+        if($rootScope.promjenaEducation==true || $rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true)
         $scope.stilLinkova={"display":"none"}
+        else
+        $scope.stilLinkova={"display":"block"}
     },0)
 })

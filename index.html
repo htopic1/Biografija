@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" type="text/css" href="css.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 </head>
@@ -12,16 +12,45 @@
     <div id="slike" ng-controller="kontrolerSlika" ng-style="efekat">
         <img id="slika" ng-src="{{slika}}" alt="">
     </div>
-    <div id="pocetni" ng-controller="kontrolerEducation" >
+    <div id="pocetni" ng-controller="kontrolerMenua">
         <div id="glavni" ng-style="izgledEkrana">
             <div><img id="profilna" src="profilna.jpg" alt=""></div>
-            <div class="ime" id="name"><br>H&nbsp&nbspA&nbsp&nbspR&nbsp&nbspI&nbsp&nbspS&nbsp&nbsp&nbspT&nbsp&nbspO&nbsp&nbspP&nbsp&nbspI&nbsp&nbspĆ</div>
-            <br><div class="ime">ABOUT ME</div>
-            <div class="ime" ng-click="education()" id="education">EDUCATION</div>
-            <div class="ime">SKILLS</div>
-        </div>   
-        <div id="glavni2" ng-style="stilPomocnog">
-        
+            <div class="ime" id="name"><br>H&nbsp&nbspA&nbsp&nbspR&nbsp&nbspI&nbsp&nbspS&nbsp&nbsp&nbspT&nbsp&nbspO&nbsp&nbspP&nbsp&nbspI&nbsp&nbspĆ</div><br>
+            <div class="ime" id="aboutMe" ng-click="aboutMe()" ng-style="stilAboutMe">&nbsp&nbsp&nbsp&nbspABOUT ME&nbsp&nbsp&nbsp&nbsp</div>
+            <div class="ime" id="education" ng-click="education()" ng-style="stilEducation">&nbsp&nbsp&nbsp&nbspEDUCATION&nbsp&nbsp&nbsp&nbsp</div>
+            <div class="ime" id="skills" ng-click="skills()" ng-style="stilSkills">&nbsp&nbsp&nbsp&nbspSKILLS&nbsp&nbsp&nbsp&nbsp</div>
+        </div>  
+
+        <div id="glavni2" ng-style="stilPomocnogAboutMe">
+            <button id="iks" ng-click="vratiAboutMe()">X</button>
+            <p class="naslov">DATUM RODŽENJA:<br></p>
+            <p class="oznaka">19. 07. 1999., BUGOJNO<br></p>
+            <br><p class="naslov">ADRESA STANOVANJA:<br></p>
+            <p class="oznaka">POLJICE 5, 13<br>70230 BUGOJNO<br></p>
+            <br><p class="naslov">EMAIL:<br></p>
+            <p class="oznaka">haristopic@gmail.com<br></p>
+            <br><p class="naslov">BROJ TELEFONA:<br></p>
+            <p class="oznaka">061/685-223</p>
+        </div>
+
+        <div id="glavni2" ng-style="stilPomocnogEducation">
+            <button id="iks" ng-click="vratiEducation()">X</button>
+            
+            <p class="naslov">OSNOVNA ŠKOLA:<br></p>
+            <p class="oznaka">DRUGA OSNOVNA ŠKOLA, BUGOJNO<br></p>
+            <br><p class="naslov">SREDNJA ŠKOLA:<br></p>
+            <p class="oznaka">SREDNJA TEHNIČKA ŠKOLA, BUGOJNO<br>ELEKTROTEHNIČAR RAČUNARSKE TEHNIKE I AUTOMATIKE<br></p>
+            <br><p class="naslov">FAKULTET:<br></p>
+            <p class="oznaka">ELEKTROTEHNIČKI FAKULTET SARAJEVO<br>1. GODINA<br></p>
+            <br><p class="naslov">STRUČNO OBRAZOVANJE:<br></p>
+            <p class="oznaka">ITACADEMY<br>FRONTEND JAVASCRIPT DEVELOPER</p>
+            
+        </div>
+
+        <div id="glavni2" ng-style="stilPomocnogSkills">
+            <button id="iks" ng-click="vratiSkills()">X</button>
+            <p class="naslov">TEHNOLOGIJE:<br></p>
+            <p class="oznaka">C<br>C++<br>HTML<br>CSS<br>JAVASCRIPT<br>ANGULARJS<br>MICROSOFT OFFICE<br></p>
         </div>
     </div>
 

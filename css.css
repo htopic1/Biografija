@@ -11,6 +11,7 @@ body
     width: 100vw;
     height: 100vh;
     position: fixed;
+    filter: brightness(.5);
 }
 
 #slike
@@ -33,21 +34,72 @@ body
     align-items: center;
     transition: 1s;
     float: left;
+    overflow: hidden;
 }
 
 #glavni2
 {
+    background: gray;
     position: absolute;
     right: 0px;
     width: 0vw;
     height: 100vh;
     float: right;
     transition: 1s;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#iks
+{
+    background: gray;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    outline: none;
+    cursor: pointer;
+}
+
+#iks:active
+{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.naslov
+{
+    width: 50%;
+    background: white;
+    padding: 0 10px;
+}
+
+.oznaka
+{
+    background: black;
+    color: white;
+    padding: 10px;
+    width: 50%;
+}
+
+p
+{
+    margin: 0;
 }
 
 #profilna
 {
-    width: 120px;
+    width: 150px;
     border-radius: 100%;
     filter: brightness(.85);
 }
@@ -137,4 +189,16 @@ li
     font-size: 25px;
     font-family: 'Oxygen', sans-serif;
     cursor: auto;
+}
+
+#education, #skills, #aboutMe
+{
+    width: 150px;
+    text-align: center;
+}
+
+#education:hover, #skills:hover, #aboutMe:hover
+{
+    background: white;
+    color: black;
 }
