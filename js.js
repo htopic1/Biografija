@@ -5,9 +5,9 @@ angular.module("biografija",[])
     $rootScope.promjenaAboutMe=false
 })
 .controller("kontrolerSlika",function($scope,$interval,$timeout){
-    var slike=["background.jpg","background2.jpg","background3.jpg","background4.jpg","background5.jpg","background6.jpg","background7.jpg","background8.jpg","background9.jpg","background10.jpg"]
+    var slike=["Pictures/background.jpg","Pictures/background2.jpg","Pictures/background3.jpg","Pictures/background4.jpg","Pictures/background5.jpg","Pictures/background6.jpg","Pictures/background7.jpg","Pictures/background8.jpg","Pictures/background9.jpg","Pictures/background10.jpg"]
     $scope.slika=slike[0]
-    var i=0;
+    var i=1;
     $interval(function(){
         $scope.efekat={"filter":"brightness(0)"}
         $scope.slika=slike[i]
