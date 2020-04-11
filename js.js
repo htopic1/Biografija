@@ -10,14 +10,15 @@ angular.module("biografija",[])
     var i=1;
     $interval(function(){
         $scope.efekat={"filter":"brightness(0)"}
-        $scope.slika=slike[i]
+        $timeout(function(){
+            $scope.slika=slike[i]
             i++;
             if(i==slike.length)
             i=0;
+        },1000)
         $timeout(function(){
             $scope.efekat={"filter":"brightness(1)"}
         },2000)
-        
     },6000)
 })
 .controller("kontrolerLinkova",function($scope){
@@ -28,12 +29,13 @@ angular.module("biografija",[])
         $scope.hoverStil={"animation-play-state":"running"}
     }
 })  
-.controller("kontrolerMenua",function($scope,$rootScope){
+.controller("kontrolerMenua",function($scope,$rootScope,$timeout){
     $scope.aboutMe=function(){
         if($rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true)
         {
             $scope.vratiEducation()
             $scope.vratiSkills()
+            $timeout(function(){},1000);
         }
         $rootScope.promjenaAboutMe=true
         $scope.izgledEkrana={"width":"51vw"}
