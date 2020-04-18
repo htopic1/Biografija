@@ -1,2 +1,3 @@
 # Biografija
- 
+
+Korišten je angularJS!
