@@ -45,7 +45,7 @@ body
     width: 0vw;
     height: 100vh;
     float: right;
-    transition: 1s;
+    transition: 0.5s;
     visibility: hidden;
     overflow: hidden;
     display: flex;
@@ -53,6 +53,11 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#glavni2::-webkit-scrollbar
+{
+    display: none;
 }
 
 #iks
@@ -79,7 +84,7 @@ body
 
 .naslov
 {
-    width: 50%;
+    /*width: 50%;*/
     background: white;
     padding: 0 10px;
 }
@@ -89,7 +94,15 @@ body
     background: black;
     color: white;
     padding: 10px;
+    /*width: 50%;*/
+}
+
+.t
+{
     width: 50%;
+    position: relative;
+    right: -100%;
+    transition: 1s;
 }
 
 p
