@@ -1,8 +1,8 @@
 angular.module("biografija",[])
 .run(function($rootScope){
-    $rootScope.promjenaEducation=false
-    $rootScope.promjenaSkills=false
-    $rootScope.promjenaAboutMe=false
+    //$rootScope.promjenaEducation=false
+    //$rootScope.promjenaSkills=false
+    //$rootScope.promjenaAboutMe=false
     $rootScope.daLiJeNekiMenuOtvoren=false
 })
 .controller("kontrolerSlika",function($scope,$interval,$timeout){
@@ -57,30 +57,32 @@ angular.module("biografija",[])
     }
 
     $scope.aboutMe=function(){
-        if($rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true)
+        if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
         {
             $scope.vratiEducation()
             $scope.vratiSkills()
-            sakrij()
             $timeout(function(){
-                $rootScope.promjenaAboutMe=true
-                $scope.izgledEkrana={"width":"51vw"}
-                $scope.stilPomocnogAboutMe={"width":"45vw",
-                                            "visibility":"visible",
-                                            "overflow":"auto"}
+                //$rootScope.promjenaAboutMe=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogAboutMe={"width":"50vw",
+                                            "visibility":"visible"}
             },1000)
             otkrij()
         }
 
         else
         {
-            $rootScope.promjenaAboutMe=true
-            $scope.izgledEkrana={"width":"51vw"}
-            $scope.stilPomocnogAboutMe={"width":"45vw",
-                                        "visibility":"visible",
-                                        "overflow":"auto"}
             sakrij()
-            otkrij()
+            $timeout(function(){
+                //$rootScope.promjenaAboutMe=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogAboutMe={"width":"50vw",
+                                            "visibility":"visible"}
+                otkrij()
+            },400)
+            
         }
         
         
@@ -88,17 +90,16 @@ angular.module("biografija",[])
                               "color":"black"}*/
     }
     $scope.education=function(){
-        if($rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true)
+        if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
         {
             $scope.vratiAboutMe()
             $scope.vratiSkills()
-            sakrij()
             $timeout(function(){
-                $rootScope.promjenaEducation=true
-                $scope.izgledEkrana={"width":"51vw"}
-                $scope.stilPomocnogEducation={"width":"45vw",
-                                            "visibility":"visible",
-                                            "overflow":"auto"}
+                //$rootScope.promjenaEducation=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogEducation={"width":"50vw",
+                                            "visibility":"visible"}
             },1000)
             otkrij()
         }
@@ -106,83 +107,100 @@ angular.module("biografija",[])
 
         else
         {
-            $rootScope.promjenaEducation=true
-            $scope.izgledEkrana={"width":"51vw"}
-            $scope.stilPomocnogEducation={"width":"45vw",
-                                        "visibility":"visible",
-                                        "overflow":"auto"}
             sakrij()
-            otkrij()
+            $timeout(function(){
+                //$rootScope.promjenaEducation=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogEducation={"width":"50vw",
+                                            "visibility":"visible"}
+                otkrij()
+            },400)
+            
         }
         
         /*$scope.stilEducation={"background":"white",
                               "color":"black"}*/
     }
     $scope.skills=function(){
-        if($rootScope.promjenaEducation==true || $rootScope.promjenaAboutMe==true)
+        if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
         {
             $scope.vratiAboutMe()
             $scope.vratiEducation()
-            sakrij()
             $timeout(function(){
-                $rootScope.promjenaSkills=true
-                $scope.izgledEkrana={"width":"51vw"}
-                $scope.stilPomocnogSkills={"width":"45vw",
-                                        "visibility":"visible",
-                                        "overflow":"auto"}
+                //$rootScope.promjenaSkills=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogSkills={"width":"50vw",
+                                        "visibility":"visible"}
             },1000)
             otkrij()
         }
 
         else
         {
-            $rootScope.promjenaSkills=true
-            $scope.izgledEkrana={"width":"51vw"}
-            $scope.stilPomocnogSkills={"width":"45vw",
-                                        "visibility":"visible",
-                                        "overflow":"auto"}
             sakrij()
-            otkrij()
+            $timeout(function(){
+                //rootScope.promjenaSkills=true
+                $rootScope.daLiJeNekiMenuOtvoren=true
+                $scope.izgledEkrana={"width":"50vw"}
+                $scope.stilPomocnogSkills={"width":"50vw",
+                                            "visibility":"visible"}
+                otkrij()
+            },400)
+            
         }
 
         /*$scope.stilSkills={"background":"white",
                               "color":"black"}*/
     }
 
-    $scope.vratiAboutMe=function(){
-        $rootScope.promjenaAboutMe=false
-        $scope.izgledEkrana={"width":"100vw"}
-        $scope.stilPomocnogAboutMe={"width":"0vw",
-                                      "visibility":"hidden",
-                                      "overflow":"hidden"}
+    $scope.vratiAboutMe=function(iks){
+        //$rootScope.promjenaAboutMe=false
+        $rootScope.daLiJeNekiMenuOtvoren==false
+        sakrij()
+        $timeout(function(){
+            if(iks=='X')
+            $scope.izgledEkrana={"width":"100vw"}
+            $scope.stilPomocnogAboutMe={"width":"0vw",
+                                        "visibility":"hidden"}
+        },500)
+        
         /*$scope.stilAboutMe={"background":"none",
                               "color":"white"}*/
     }
-    $scope.vratiEducation=function(){
-        $rootScope.promjenaEducation=false
-        $scope.izgledEkrana={"width":"100vw"}
-        $scope.stilPomocnogEducation={"width":"0vw",
-                                      "visibility":"hidden",
-                                      "overflow":"hidden"}
+    $scope.vratiEducation=function(iks){
+        //$rootScope.promjenaEducation=false
+        $rootScope.daLiJeNekiMenuOtvoren==false
+        sakrij()
+        $timeout(function(){
+            if(iks=='X')
+            $scope.izgledEkrana={"width":"100vw"}
+            $scope.stilPomocnogEducation={"width":"0vw",
+                                        "visibility":"hidden"}
+        },500)
+        
         /*$scope.stilEducation={"background":"none",
                               "color":"white"}*/
     }
-    $scope.vratiSkills=function(){
-        $rootScope.promjenaSkills=false
-        $scope.izgledEkrana={"width":"100vw"}
-        $scope.stilPomocnogSkills={"width":"0vw",
-                                      "visibility":"hidden",
-                                      "overflow":"hidden"}
+    $scope.vratiSkills=function(iks){
+        //$rootScope.promjenaSkills=false
+        $rootScope.daLiJeNekiMenuOtvoren==false
+        sakrij()
+        $timeout(function(){
+            if(iks=='X')
+            $scope.izgledEkrana={"width":"100vw"}
+            $scope.stilPomocnogSkills={"width":"0vw",
+                                        "visibility":"hidden",}
+        },500)
+        
         /*$scope.stilSkills={"background":"none",
                               "color":"white"}*/
     }
 })
-.controller("kontrolerStavki",function($scope,$timeout){
-    
-})
 .controller("kontrolerLinkova2",function($scope,$rootScope,$interval){
     $interval(function(){
-        if($rootScope.promjenaEducation==true || $rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true)
+        if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
         $scope.stilLinkova={"display":"none"}
         else
         $scope.stilLinkova={"display":"block"}

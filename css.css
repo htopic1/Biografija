@@ -1,7 +1,6 @@
 body
 {
     margin: 0;
-    position: relative;
     width: 100vw;
     height: 100vh;
 }
@@ -16,15 +15,26 @@ body
 
 #slike
 {
+    width: 100vw;
+    height: 100vh;
     transition: 1s;
 }
 
-#pocetni
+/*///////////////////////GRANICA////////////////////////////*/
+
+#nulti
 {
-    position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    transition: 1s;
 }
 
-#glavni
+/*///////////////////////GRANICA////////////////////////////*/
+
+#prvi
 {
     width: 100vw;
     height: 100vh;
@@ -32,33 +42,30 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 1s;
-    float: left;
-    overflow: hidden;
+    transition: 0.5s;
 }
 
-#glavni2
+#drugi, #treci, #cetvrti
 {
     background: gray;
-    position: absolute;
-    right: 0px;
-    width: 0vw;
     height: 100vh;
-    float: right;
+    width: 0vw;
     transition: 0.5s;
-    visibility: hidden;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
+    visibility: hidden;
 }
 
-#glavni2::-webkit-scrollbar
+/*#glavni2::-webkit-scrollbar, #glavni::-webkit-scrollbar, body::-webkit-scrollbar
 {
     display: none;
-}
+}*/
+
+/*///////////////////////GRANICA////////////////////////////*/
 
 #iks
 {

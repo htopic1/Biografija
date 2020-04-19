@@ -12,8 +12,9 @@
     <div id="slike" ng-controller="kontrolerSlika" ng-style="efekat">
         <img id="slika" ng-src="{{slika}}" alt="">
     </div>
-    <div id="pocetni" ng-controller="kontrolerMenua">
-        <div id="glavni" ng-style="izgledEkrana">
+
+    <div id="nulti" ng-controller="kontrolerMenua">
+        <div id="prvi" ng-style="izgledEkrana">
             <div><img id="profilna" src="profilna.jpg" alt=""></div>
             <div class="ime" id="name"><br>H&nbsp&nbspA&nbsp&nbspR&nbsp&nbspI&nbsp&nbspS&nbsp&nbsp&nbspT&nbsp&nbspO&nbsp&nbspP&nbsp&nbspI&nbsp&nbspĆ</div><br>
             <div class="ime" id="aboutMe" ng-click="aboutMe()" ng-style="stilAboutMe">&nbsp&nbsp&nbsp&nbspABOUT ME&nbsp&nbsp&nbsp&nbsp</div>
@@ -21,8 +22,8 @@
             <div class="ime" id="skills" ng-click="skills()" ng-style="stilSkills">&nbsp&nbsp&nbsp&nbspSKILLS&nbsp&nbsp&nbsp&nbsp</div>
         </div>  
 
-        <div id="glavni2" ng-style="stilPomocnogAboutMe">
-            <button id="iks" ng-click="vratiAboutMe()">X</button>
+        <div id="drugi" ng-style="stilPomocnogAboutMe">
+            <button id="iks" ng-click="vratiAboutMe('X')">X</button>
             <div class="t" ng-style="t1">
                 <p class="naslov">DATUM ROĐENJA:<br></p>
                 <p class="oznaka">19. 07. 1999., BUGOJNO<br></p>
@@ -45,8 +46,8 @@
             </div>
         </div>
 
-        <div id="glavni2" ng-style="stilPomocnogEducation">
-            <button id="iks" ng-click="vratiEducation()">X</button>
+        <div id="treci" ng-style="stilPomocnogEducation">
+            <button id="iks" ng-click="vratiEducation('X')">X</button>
             
             <div class="t" ng-style="t1">
                 <p class="naslov">OSNOVNA ŠKOLA:<br></p>
@@ -64,12 +65,10 @@
                 <br><p class="naslov">STRUČNO OBRAZOVANJE:<br></p>
                 <p class="oznaka">ITACADEMY<br>FRONTEND JAVASCRIPT DEVELOPER</p>
             </div>
-            
-            
         </div>
 
-        <div id="glavni2" ng-style="stilPomocnogSkills">
-            <button id="iks" ng-click="vratiSkills()">X</button>
+        <div id="cetvrti" ng-style="stilPomocnogSkills">
+            <button id="iks" ng-click="vratiSkills('X')">X</button>
             <div class="t" ng-style="t1">
                 <p class="naslov">TEHNOLOGIJE:<br></p>
                 <p class="oznaka">C<br>C++<br>HTML<br>CSS<br>JAVASCRIPT<br>ANGULARJS<br>MICROSOFT OFFICE<br></p>
