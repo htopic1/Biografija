@@ -160,7 +160,7 @@ angular.module("biografija",[])
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
-            if(iks=='X')
+            //if(iks=='X')
             $scope.izgledEkrana={"width":"100vw"}
             $scope.stilPomocnogAboutMe={"width":"0vw",
                                         "visibility":"hidden"}
@@ -174,7 +174,7 @@ angular.module("biografija",[])
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
-            if(iks=='X')
+            //if(iks=='X')
             $scope.izgledEkrana={"width":"100vw"}
             $scope.stilPomocnogEducation={"width":"0vw",
                                         "visibility":"hidden"}
@@ -188,7 +188,7 @@ angular.module("biografija",[])
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
-            if(iks=='X')
+            //if(iks=='X')
             $scope.izgledEkrana={"width":"100vw"}
             $scope.stilPomocnogSkills={"width":"0vw",
                                         "visibility":"hidden",}
