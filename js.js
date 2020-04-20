@@ -1,8 +1,8 @@
 angular.module("biografija",[])
 .run(function($rootScope){
-    //$rootScope.promjenaEducation=false
-    //$rootScope.promjenaSkills=false
-    //$rootScope.promjenaAboutMe=false
+    $rootScope.promjenaEducation=false
+    $rootScope.promjenaSkills=false
+    $rootScope.promjenaAboutMe=false
     $rootScope.daLiJeNekiMenuOtvoren=false
 })
 .controller("kontrolerSlika",function($scope,$interval,$timeout){
@@ -37,16 +37,16 @@ angular.module("biografija",[])
         },1000)
         $timeout(function(){
             $scope.t2={"right":"0%"}
-        },1500)
+        },1200)
         $timeout(function(){
             $scope.t3={"right":"0%"}
-        },2000)
+        },1400)
         $timeout(function(){
             $scope.t4={"right":"0%"}
-        },2500)
+        },1600)
         $timeout(function(){
             $scope.t5={"right":"0%"}
-        },3000)
+        },1800)
     }
     function sakrij(){
         $scope.t1={"right":"-100%"}
@@ -57,106 +57,112 @@ angular.module("biografija",[])
     }
 
     $scope.aboutMe=function(){
-        if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+        if($rootScope.promjenaAboutMe==false)
         {
-            $scope.vratiEducation()
-            $scope.vratiSkills()
-            $timeout(function(){
-                //$rootScope.promjenaAboutMe=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogAboutMe={"width":"50vw",
-                                            "visibility":"visible"}
-            },1000)
-            otkrij()
-        }
-
-        else
-        {
-            sakrij()
-            $timeout(function(){
-                //$rootScope.promjenaAboutMe=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogAboutMe={"width":"50vw",
-                                            "visibility":"visible"}
+            if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaEducation==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+            {
+                $scope.vratiEducation()
+                $scope.vratiSkills()
+                $timeout(function(){
+                    $rootScope.promjenaAboutMe=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogAboutMe={"width":"50vw",
+                                                "visibility":"visible"}
+                },1000)
                 otkrij()
-            },400)
-            
+            }
+
+            else
+            {
+                sakrij()
+                $timeout(function(){
+                    $rootScope.promjenaAboutMe=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogAboutMe={"width":"50vw",
+                                                "visibility":"visible"}
+                    otkrij()
+                },400)
+                
+            }
         }
-        
         
         /*$scope.stilAboutMe={"background":"white",
                               "color":"black"}*/
     }
     $scope.education=function(){
-        if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+        if($rootScope.promjenaEducation==false)
         {
-            $scope.vratiAboutMe()
-            $scope.vratiSkills()
-            $timeout(function(){
-                //$rootScope.promjenaEducation=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogEducation={"width":"50vw",
-                                            "visibility":"visible"}
-            },1000)
-            otkrij()
-        }
-        
-
-        else
-        {
-            sakrij()
-            $timeout(function(){
-                //$rootScope.promjenaEducation=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogEducation={"width":"50vw",
-                                            "visibility":"visible"}
+            if(/*$rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+            {
+                $scope.vratiAboutMe()
+                $scope.vratiSkills()
+                $timeout(function(){
+                    $rootScope.promjenaEducation=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogEducation={"width":"50vw",
+                                                "visibility":"visible"}
+                },1000)
                 otkrij()
-            },400)
+            }
             
+            else
+            {
+                sakrij()
+                $timeout(function(){
+                    $rootScope.promjenaEducation=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogEducation={"width":"50vw",
+                                                "visibility":"visible"}
+                    otkrij()
+                },400)
+                
+            }
         }
-        
+
         /*$scope.stilEducation={"background":"white",
                               "color":"black"}*/
     }
     $scope.skills=function(){
-        if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+        if($rootScope.promjenaSkills==false)
         {
-            $scope.vratiAboutMe()
-            $scope.vratiEducation()
-            $timeout(function(){
-                //$rootScope.promjenaSkills=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogSkills={"width":"50vw",
-                                        "visibility":"visible"}
-            },1000)
-            otkrij()
-        }
-
-        else
-        {
-            sakrij()
-            $timeout(function(){
-                //rootScope.promjenaSkills=true
-                $rootScope.daLiJeNekiMenuOtvoren=true
-                $scope.izgledEkrana={"width":"50vw"}
-                $scope.stilPomocnogSkills={"width":"50vw",
+            if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+            {
+                $scope.vratiAboutMe()
+                $scope.vratiEducation()
+                $timeout(function(){
+                    $rootScope.promjenaSkills=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogSkills={"width":"50vw",
                                             "visibility":"visible"}
+                },1000)
                 otkrij()
-            },400)
-            
-        }
+            }
 
+            else
+            {
+                sakrij()
+                $timeout(function(){
+                    rootScope.promjenaSkills=true
+                    $rootScope.daLiJeNekiMenuOtvoren=true
+                    $scope.izgledEkrana={"width":"50vw"}
+                    $scope.stilPomocnogSkills={"width":"50vw",
+                                                "visibility":"visible"}
+                    otkrij()
+                },400)
+                
+            }
+        }
         /*$scope.stilSkills={"background":"white",
                               "color":"black"}*/
     }
 
     $scope.vratiAboutMe=function(iks){
-        //$rootScope.promjenaAboutMe=false
+        $rootScope.promjenaAboutMe=false
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
@@ -170,7 +176,7 @@ angular.module("biografija",[])
                               "color":"white"}*/
     }
     $scope.vratiEducation=function(iks){
-        //$rootScope.promjenaEducation=false
+        $rootScope.promjenaEducation=false
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
