@@ -184,7 +184,7 @@ angular.module("biografija",[])
                               "color":"white"}*/
     }
     $scope.vratiSkills=function(iks){
-        //$rootScope.promjenaSkills=false
+        $rootScope.promjenaSkills=false
         $rootScope.daLiJeNekiMenuOtvoren==false
         sakrij()
         $timeout(function(){
