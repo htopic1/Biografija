@@ -163,7 +163,9 @@ angular.module("biografija",[])
 
     $scope.vratiAboutMe=function(iks){
         $rootScope.promjenaAboutMe=false
-        $rootScope.daLiJeNekiMenuOtvoren==false
+        $timeout(function(){
+            $rootScope.daLiJeNekiMenuOtvoren=false
+        },1000)
         sakrij()
         $timeout(function(){
             //if(iks=='X')
@@ -177,7 +179,9 @@ angular.module("biografija",[])
     }
     $scope.vratiEducation=function(iks){
         $rootScope.promjenaEducation=false
-        $rootScope.daLiJeNekiMenuOtvoren==false
+        $timeout(function(){
+            $rootScope.daLiJeNekiMenuOtvoren=false
+        },1000)
         sakrij()
         $timeout(function(){
             //if(iks=='X')
@@ -191,7 +195,9 @@ angular.module("biografija",[])
     }
     $scope.vratiSkills=function(iks){
         $rootScope.promjenaSkills=false
-        $rootScope.daLiJeNekiMenuOtvoren==false
+        $timeout(function(){
+            $rootScope.daLiJeNekiMenuOtvoren=false
+        },1000)
         sakrij()
         $timeout(function(){
             //if(iks=='X')
@@ -206,9 +212,15 @@ angular.module("biografija",[])
 })
 .controller("kontrolerLinkova2",function($scope,$rootScope,$interval){
     $interval(function(){
-        if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true*/ $rootScope.daLiJeNekiMenuOtvoren==true)
-        $scope.stilLinkova={"display":"none"}
+        if(/*$rootScope.promjenaEducation==true || $rootScope.promjenaSkills==true || $rootScope.promjenaAboutMe==true ||*/ $rootScope.daLiJeNekiMenuOtvoren==true)
+        {
+            $scope.stilLinkova={"display":"none"}
+            //console.log($rootScope.daLiJeNekiMenuOtvoren);
+        }
         else
-        $scope.stilLinkova={"display":"block"}
+        {
+            $scope.stilLinkova={"display":"block"}
+            //console.log($rootScope.daLiJeNekiMenuOtvoren);
+        }
     },0)
 })

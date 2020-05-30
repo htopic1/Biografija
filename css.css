@@ -41,10 +41,18 @@ body
     transition: 0.5s;
 }
 
+#zamraciti
+{
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background: gray;
+    filter: opacity(.75);
+}
+
 #drugi, #treci, #cetvrti
 {
     position: relative;
-    background: gray;
     height: 100vh;
     width: 0vw;
     transition: 0.5s;
