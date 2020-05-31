@@ -184,7 +184,7 @@ angular.module("biografija",[])
             {
                 sakrij()
                 $timeout(function(){
-                    rootScope.promjenaSkills=true
+                    $rootScope.promjenaSkills=true
                     $rootScope.daLiJeNekiMenuOtvoren=true
                     $scope.izgledEkrana={"width":"50vw"}
                     $scope.stilPomocnogSkills={"width":"50vw",
