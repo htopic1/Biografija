@@ -275,8 +275,10 @@ li
 
 #education, #skills, #aboutMe
 {
+    position: relative;
     width: 150px;
     text-align: center;
+    overflow: visible;
 }
 
 #education:hover, #skills:hover, #aboutMe:hover
