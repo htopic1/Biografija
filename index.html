@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body ng-app="biografija">
     <div id="slike" ng-controller="kontrolerSlika" ng-style="efekat">
@@ -15,7 +16,15 @@
 
     <div id="nulti" ng-controller="kontrolerMenua">
         <div id="prvi" ng-style="izgledEkrana">
-            <div><img id="profilna" src="profilna.jpg" alt=""></div>
+            <div id="pokaziLupu">
+                <img id="profilna" src="profilna.jpg" alt="" ng-mouseover="pokaziLupu()">
+            </div>
+            
+            <!--<div id="totalnoZamracitiKadJeSlikaUvecana" ng-style="otkrijSlikuu"></div>
+            <div id="uvecatiSlikuNaLupi" ng-style="otkrijSlikuu">
+                <img src="profilna.jpg" width="500px" alt="" ng-mouseover="pokaziKompress()">
+            </div>-->
+            
             <div class="ime" id="name"><br>H&nbsp&nbspA&nbsp&nbspR&nbsp&nbspI&nbsp&nbspS&nbsp&nbsp&nbspT&nbsp&nbspO&nbsp&nbspP&nbsp&nbspI&nbsp&nbspĆ</div><br>
             <div class="ime" id="aboutMe" ng-click="aboutMe()" ng-style="stilAboutMe">&nbsp&nbsp&nbsp&nbspABOUT ME&nbsp&nbsp&nbsp&nbsp</div>
             <div class="ime" id="education" ng-click="education()" ng-style="stilEducation">&nbsp&nbsp&nbsp&nbspEDUCATION&nbsp&nbsp&nbsp&nbsp</div>
@@ -27,11 +36,11 @@
             <button id="iks" ng-click="vratiAboutMe('X')">X</button>
             <div class="t" ng-style="t1">
                 <p class="naslov">ABOUT ME:</p><br>
-                <p class="naslov">DATUM ROĐENJA:<br></p>
+                <p class="naslov">DATE OF BIRTH:<br></p>
                 <p class="oznaka">19. 07. 1999., BUGOJNO<br></p>
             </div>
             <div class="t" ng-style="t2">
-                <br><p class="naslov">ADRESA STANOVANJA:<br></p>
+                <br><p class="naslov">ADDRESS:<br></p>
                 <p class="oznaka">POLJICE 5, 13<br>70230 BUGOJNO<br></p>
             </div>
             <div class="t" ng-style="t3">
@@ -39,12 +48,12 @@
                 <p class="oznaka">haristopic@gmail.com<br></p>
             </div>
             <div class="t" ng-style="t4">
-                <br><p class="naslov">BROJ TELEFONA:<br></p>
+                <br><p class="naslov">TELEPHONE NUMBER:<br></p>
                 <p class="oznaka">061/685-223</p>
             </div>
             <div class="t" ng-style="t5">
-                <br><p class="naslov">STRANI JEZICI:<br></p>
-                <p class="oznaka">ENGLESKI JEZIK <br> A2/B1</p>
+                <br><p class="naslov">FOREIGN LANGUAGES:<br></p>
+                <p class="oznaka">ENGLISH LANGUAGE <br> A2/B1</p>
             </div>
         </div>
 
@@ -53,20 +62,20 @@
             <button id="iks" ng-click="vratiEducation('X')">X</button>
             <div class="t" ng-style="t1">
                 <p class="naslov">EDUCATION:</p><br>
-                <p class="naslov">OSNOVNA ŠKOLA:<br></p>
-                <p class="oznaka">DRUGA OSNOVNA ŠKOLA, BUGOJNO<br></p>
+                <p class="naslov">PRIMARY SCHOOL:<br></p>
+                <p class="oznaka">SECOND PRIMARY SCHOOL, BUGOJNO<br></p>
             </div>
             <div class="t" ng-style="t2">
-                <br><p class="naslov">SREDNJA ŠKOLA:<br></p>
-                <p class="oznaka">SREDNJA TEHNIČKA ŠKOLA, BUGOJNO<br>ELEKTROTEHNIČAR RAČUNARSKE TEHNIKE I AUTOMATIKE<br></p>
+                <br><p class="naslov">HIGH SCHOOL:<br></p>
+                <p class="oznaka">TEHNICAL HIGH SCHOOL, BUGOJNO<br>ELECTRICAL TECHNICIAN OF COMPUTER ENGINEERING AND AUTOMATION<br></p>
             </div>
             <div class="t" ng-style="t3">
-                <br><p class="naslov">FAKULTET:<br></p>
-                <p class="oznaka">ELEKTROTEHNIČKI FAKULTET SARAJEVO<br>1. GODINA<br></p>
+                <br><p class="naslov">FACULTY:<br></p>
+                <p class="oznaka">FACULTY OF ELECTRICAL ENGEENERING, SARAJEVO<br>1. YEAR<br></p>
             </div>
             <div class="t" ng-style="t4">
-                <br><p class="naslov">STRUČNO OBRAZOVANJE:<br></p>
-                <p class="oznaka">ITACADEMY<br>FRONTEND JAVASCRIPT DEVELOPER</p>
+                <br><p class="naslov">PROFESSIONAL EDUCATION:<br></p>
+                <p class="oznaka">ITACADEMY SARAJEVO<br>FRONTEND JAVASCRIPT DEVELOPER</p>
             </div>
         </div>
 
@@ -75,10 +84,17 @@
             <button id="iks" ng-click="vratiSkills('X')">X</button>
             <div class="t" ng-style="t1">
                 <p class="naslov">SKILLS:</p><br>
-                <p class="naslov">TEHNOLOGIJE:<br></p>
+                <p class="naslov">TECHNOLOGIES:<br></p>
                 <p class="oznaka">C<br>C++<br>HTML<br>CSS<br>JAVASCRIPT<br>ANGULARJS<br>MICROSOFT OFFICE<br></p>
             </div>
         </div>
+
+        <!--Izbaceno zbog prikazivanja na polovici-->
+        <div id="totalnoZamracitiKadJeSlikaUvecana" ng-style="otkrijSlikuu"></div>
+        <div id="uvecatiSlikuNaLupi" ng-style="otkrijSlikuu">
+            <img src="profilna.jpg" id="pointer" width="500px" alt="" ng-mouseover="pokaziKompress()">
+        </div>
+
     </div>
 
     <div id="pomocniDiv" ng-controller="kontrolerLinkova2" ng-style="stilLinkova">

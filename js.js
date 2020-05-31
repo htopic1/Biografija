@@ -30,7 +30,7 @@ angular.module("biografija",[])
         $scope.hoverStil={"animation-play-state":"running"}
     }
 })  
-.controller("kontrolerMenua",function($scope,$rootScope,$timeout){
+.controller("kontrolerMenua",function($scope,$rootScope,$timeout,$compile){
     function otkrij(){
         $timeout(function(){
             $scope.t1={"right":"0%"}
@@ -55,6 +55,43 @@ angular.module("biografija",[])
         $scope.t4={"right":"-100%"}
         $scope.t5={"right":"-100%"}
     }
+    
+
+    $scope.pokaziLupu=function(){
+        var element=angular.element($("#pokaziLupu"))
+        element.html("<img id='profilna' src='profilna.jpg' alt='' ng-mouseover='pokaziLupu()'  ng-style='zatamniSlikuPodLupom'><div id='profilnaLupa' ng-mouseleave='sakrijLupu()' ng-click='otkrijSliku()'><img ng-click='otkrijSliku()' src='expand-solid.svg' width='50px' alt=''></div>")
+        $compile(element)($scope)
+        $scope.zatamniSlikuPodLupom={"filter":"brightness(.5)"}
+    }
+
+    $scope.sakrijLupu=function(){
+        var element2=angular.element($("#pokaziLupu"))
+        element2.html("<img id='profilna' src='profilna.jpg' alt='' ng-mouseover='pokaziLupu()'>")
+        $compile(element2)($scope)
+    }
+
+    $scope.otkrijSliku=function(){
+        $scope.otkrijSlikuu={"display":"flex"}
+    }
+
+    $scope.pokaziKompress=function(){
+        var element3=angular.element($("#uvecatiSlikuNaLupi"))
+        element3.html("<img src='profilna.jpg' width='500px' alt='' ng-mouseover='pokaziKompress()' ng-style='zatamniSlikuNaLupi'><div ng-click='sakrijSliku()' id='uvecatiSlikuNaLupi2' ng-mouseleave='sakrijKompress()'><img src='compress-solid.svg' ng-click='sakrijSliku()' width='50px' alt=''></div>")
+        $compile(element3)($scope)
+        $scope.zatamniSlikuNaLupi={"filter":"brightness(.5)"}
+    }
+
+    $scope.sakrijKompress=function(){
+        var element4=angular.element($("#uvecatiSlikuNaLupi"))
+        element4.html("<img src='profilna.jpg' width='500px' alt='' ng-mouseover='pokaziKompress()'>")
+        $compile(element4)($scope)
+    }
+
+    $scope.sakrijSliku=function(){
+        $scope.otkrijSlikuu={"display":"none"}
+    }
+
+
 
     $scope.aboutMe=function(){
         if($rootScope.promjenaAboutMe==false)
@@ -160,7 +197,6 @@ angular.module("biografija",[])
         /*$scope.stilSkills={"background":"white",
                               "color":"black"}*/
     }
-
     $scope.vratiAboutMe=function(iks){
         $rootScope.promjenaAboutMe=false
         $timeout(function(){
