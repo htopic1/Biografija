@@ -125,8 +125,7 @@ angular.module("biografija",[])
             }
         }
         
-        /*$scope.stilAboutMe={"background":"white",
-                              "color":"black"}*/
+        $scope.stilAboutMe={"border":"1px solid white"}
     }
     $scope.education=function(){
         if($rootScope.promjenaEducation==false)
@@ -160,8 +159,7 @@ angular.module("biografija",[])
             }
         }
 
-        /*$scope.stilEducation={"background":"white",
-                              "color":"black"}*/
+        $scope.stilEducation={"border":"1px solid white"}
     }
     $scope.skills=function(){
         if($rootScope.promjenaSkills==false)
@@ -194,8 +192,7 @@ angular.module("biografija",[])
                 
             }
         }
-        /*$scope.stilSkills={"background":"white",
-                              "color":"black"}*/
+        $scope.stilSkills={"border":"1px solid white"}
     }
     $scope.vratiAboutMe=function(iks){
         $rootScope.promjenaAboutMe=false
@@ -210,8 +207,7 @@ angular.module("biografija",[])
                                         "visibility":"hidden"}
         },500)
         
-        /*$scope.stilAboutMe={"background":"none",
-                              "color":"white"}*/
+        $scope.stilAboutMe={}
     }
     $scope.vratiEducation=function(iks){
         $rootScope.promjenaEducation=false
@@ -226,8 +222,7 @@ angular.module("biografija",[])
                                         "visibility":"hidden"}
         },500)
         
-        /*$scope.stilEducation={"background":"none",
-                              "color":"white"}*/
+        $scope.stilEducation={}
     }
     $scope.vratiSkills=function(iks){
         $rootScope.promjenaSkills=false
@@ -242,8 +237,7 @@ angular.module("biografija",[])
                                         "visibility":"hidden",}
         },500)
         
-        /*$scope.stilSkills={"background":"none",
-                              "color":"white"}*/
+        $scope.stilSkills={}
     }
 })
 .controller("kontrolerLinkova2",function($scope,$rootScope,$interval){
